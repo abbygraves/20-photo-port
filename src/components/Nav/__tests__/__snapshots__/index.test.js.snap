@@ -16,9 +16,9 @@ exports[`Nav component matches snapshot 1`] = `
           class="mx-1"
           role="img"
         >
-          📸
+           📸
         </span>
-        Oh Snap!
+         Oh Snap!
       </a>
     </h2>
     <nav>
@@ -43,31 +43,10 @@ exports[`Nav component matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="mx-2"
-        >
-          <span>
-            Commercial
-          </span>
-        </li>
-        <li
-          class="mx-2"
+          class="mx-1 false"
         >
           <span>
             Portraits
-          </span>
-        </li>
-        <li
-          class="mx-2"
-        >
-          <span>
-            Food
-          </span>
-        </li>
-        <li
-          class="mx-2"
-        >
-          <span>
-            Landscape
           </span>
         </li>
       </ul>
