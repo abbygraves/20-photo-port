@@ -39,7 +39,7 @@ describe("Modal Component", () => {
 describe("Click Event", () => {
   it("calls onClose handler", () => {
     // Arrange: Render Modal ⬇︎
-    const { getByText } = render(<Modal
+    render(<Modal
       onClose={mockToggleModal}
       currentPhoto={currentPhoto}
     />);

@@ -85,7 +85,7 @@ describe("links are visible", () => {
 
 describe('onClick events', () => {
   it('calls the click handler when clicked', () => {
-    const { getByText } = render(<Nav
+    render(<Nav
       categories={categories}
       setCurrentCategory={mockSetCurrentCategory}
       currentCategory={mockCurrentCategory}
