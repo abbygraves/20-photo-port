@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contact component renders matches snapshot 1`] = `
+exports[`Contact Component matches snapshot 1`] = `
 <DocumentFragment>
   <section>
     <h1

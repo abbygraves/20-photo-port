@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, screen } from "@testing-library/react";
+import { render, cleanup, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Nav from "..";
 
@@ -13,7 +13,8 @@ const mockSetContactSelected = jest.fn();
 
 afterEach(cleanup);
 
-describe("Nav component", () => {
+// NAV COMPONENT & SNAPSHOT TEST
+describe("Nav Component", () => {
   // baseline test
   it("renders", () => {
     render(
@@ -42,6 +43,7 @@ describe("Nav component", () => {
   });
 });
 
+// EMOJI VISIBILITY TEST
 describe("emoji is visible", () => {
   it("inserts emoji into the h2", () => {
     // Arrange
@@ -60,6 +62,7 @@ describe("emoji is visible", () => {
   });
 });
 
+// LINK VISIBILITY TEST
 describe("links are visible", () => {
   it("inserts text into the links", () => {
     // Arrange
@@ -76,5 +79,23 @@ describe("links are visible", () => {
     // Assert
     expect(screen.getByTestId("link")).toHaveTextContent("Oh Snap!");
     expect(screen.getByTestId("about")).toHaveTextContent("About me");
+  });
+});
+
+
+describe('onClick events', () => {
+  it('calls the click handler when clicked', () => {
+    const { getByText } = render(<Nav
+      categories={categories}
+      setCurrentCategory={mockSetCurrentCategory}
+      currentCategory={mockCurrentCategory}
+      contactSelected={mockContactSelected}
+      setContactSelected={mockSetContactSelected}
+    />);
+    fireEvent.click(screen.getByText('About me'))
+    fireEvent.click(screen.getByText('Contact'))
+    fireEvent.click(screen.getByText('Portraits'))
+
+    expect(mockSetContactSelected).toHaveBeenCalledTimes(3);
   });
 });

@@ -5,13 +5,16 @@ import PhotoList from "..";
 
 afterEach(cleanup);
 
-describe("PhotoList is rendering", () => {
+// PHOTOLIST COMPONENT & SNAPSHOT TEST
+describe("PhotoList Component", () => {
   it("renders", () => {
     render(<PhotoList />);
   });
+
+  it("matches snapshot", () => {
+    const { asFragment } = render(<PhotoList />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
-it('renders', () => {
-  const { asFragment } = render(<PhotoList />)
-  expect(asFragment()).toMatchSnapshot()
-});
+// !!!: MATCHES GITLAB

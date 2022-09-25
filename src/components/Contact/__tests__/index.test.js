@@ -5,7 +5,8 @@ import Contact from "..";
 
 afterEach(cleanup);
 
-describe("Contact component renders", () => {
+// CONTACT COMPONENT & SNAPSHOT TEST
+describe("Contact Component", () => {
   it("renders", () => {
     render(<Contact />);
   });
@@ -16,14 +17,21 @@ describe("Contact component renders", () => {
   });
 });
 
+// h1 TEXT MATCHES EXPECTED TEST
 describe("h1tag", () => {
-  it("mtches", () => {
+  it("Displays 'Contact Me'", () => {
     render(<Contact />);
     expect(screen.getByTestId("h1-contact")).toHaveTextContent("Contact me");
   });
+});
 
-  describe("submit button", () => {
+// SUBMIT BUTTON TEXT MATCHES EXPECTED TEST
+describe("submit button", () => {
+  it("Displays 'Submit'", () => {
     render(<Contact />);
     expect(screen.getByTestId("submitBtn")).toHaveTextContent("Submit");
   });
 });
+
+
+// !!!: MATCHES GITLAB

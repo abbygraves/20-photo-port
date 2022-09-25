@@ -10,7 +10,8 @@ const portrait = {
 
 afterEach(cleanup);
 
-describe("Gallery is rendering", () => {
+// GALLERY COMPONENT & SNAPSHOT TEST
+describe("Gallery Component", () => {
   it("renders", () => {
     render(<Gallery currentCategory={portrait} />);
   });
@@ -21,7 +22,12 @@ describe("Gallery is rendering", () => {
   });
 });
 
-it("renders", () => {
-  render(<Gallery currentCategory={portrait} />);
-  expect(screen.getByTestId("h1tag")).toHaveTextContent("Portraits");
+// h1 TEXT VISIBILITY TEST
+describe("h1tag", () => {
+  it("displays text", () => {
+    render(<Gallery currentCategory={portrait} />);
+    expect(screen.getByTestId("h1tag")).toHaveTextContent("Portraits");
+  });
 });
+
+// !!!: MATCHES GITLAB
